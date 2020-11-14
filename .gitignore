@@ -59,3 +59,7 @@ env/
 
 # PyCharm Files
 .idea/
+/venv/
+
+# Migrations
+/migrations/

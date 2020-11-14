@@ -76,6 +76,7 @@ def about():
     form = LoginForm(request.form)
     return render_template("public/about.html", form=form)
 
+
 @blueprint.route("/dashboard/")
 def dashboard():
     """ Dashboard page """

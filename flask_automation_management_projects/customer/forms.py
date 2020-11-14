@@ -24,7 +24,7 @@ class CustomerForm(FlaskForm):
         initial_validation = super(CustomerForm, self).validate()
         if not initial_validation:
             return False
-        customer = Customer.query.fillter_by(name=self.name.data).first()
+        customer = Customer.query.filter_by(name=self.name.data).first()
         if customer:
             self.name.errors.append("Customer already registered")
             return False

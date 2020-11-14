@@ -60,6 +60,12 @@
                     <li><a href="{{ url_for('public.dashboard') }}">
                         <i class=" mdi mdi-view-dashboard"></i> <span class="nav-text">Dashboard</span></a>
                     </li>
+                    <li><a href="{{ url_for('customer.customers') }}">
+                        <i class=" mdi mdi-view-dashboard"></i> <span class="nav-text">Customers</span></a>
+                    </li>
+                    <li><a href="{{ url_for('project.projects') }}">
+                        <i class=" mdi mdi-view-dashboard"></i> <span class="nav-text">Projects</span></a>
+                    </li>
                 </ul>
             </div>
             <!-- #/ nk nav scroll -->
@@ -73,10 +79,10 @@
             <!-- #/ container -->
         </div>
         <!-- #/ content body -->
-        <!-- footer -->
-        {% include "footer.html" %}
-        <!-- #/ footer -->
     </div>
+    <!-- footer -->
+    {% include "footer.html" %}
+    <!-- #/ footer -->
     <!-- Common JS -->
     <script src="{{ static_url_for('static', filename='assets/plugins/common/common.min.js') }}"></script>
     <!-- Custom script -->
@@ -85,6 +91,9 @@
     <script src="{{ static_url_for('static', filename='assets/plugins/chartjs/Chart.bundle.js') }}"></script>
     <!-- Custom dashboard script -->
     <script src="{{ static_url_for('static', filename='assets/js/dashboard-1.js') }}"></script>
+    {% block js %}
+    {% endblock %}
+
 </body>
 
 </html>
