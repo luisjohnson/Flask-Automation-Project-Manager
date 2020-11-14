@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>
+        {% block page_title %}
+      Flask Automation Management Projects
+       {% endblock %}
+    </title>
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="{{static_url_for('static', filename='build/img/favicon.ico') }}"/>
+    <link
+            href="{{ static_url_for('static', filename='assets/css/style.css') }}"
+            type="text/css"
+            rel="stylesheet"
+    />
+    <script src="{{ static_url_for('static', filename='assets/js/modernizr-3.6.0.min.js') }}"></script>
+    {% block css %}{% endblock %}
+</head>
+
+<body class="v-light vertical-nav fix-header fix-sidebar">
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10">
+                </circle></svg>
+        </div>
+    </div>
+    <div id="main-wrapper">
+        <!-- header -->
+        <div class="header">
+            <div class="nav-header">
+                <div class="brand-logo"><a href="{{ url_for('public.home') }}"><b>
+                    <img src="{{ static_url_for('static', filename='assets/images/logo.png') }}" alt="">
+                     </b>
+                    <span class="brand-title">
+                        <img src="" alt="">
+                        <img src="{{ static_url_for('static', filename='assets/images/logo-text.png') }}" alt="">
+                    </span>
+                </a>
+                </div>
+                <div class="nav-control">
+                    <div class="hamburger"><span class="line"></span> <span class="line"></span> <span class="line"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-content">
+
+            </div>
+        </div>
+        <!-- #/ header -->
+        <!-- sidebar -->
+        <div class="nk-sidebar">
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label">Main</li>
+                    <li><a href="{{ url_for('public.dashboard') }}">
+                        <i class=" mdi mdi-view-dashboard"></i> <span class="nav-text">Dashboard</span></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- #/ nk nav scroll -->
+        </div>
+        <!-- #/ sidebar -->
+        <!-- content body -->
+        <div class="content-body">
+            <div class="container">
+                {% block content %}{% endblock %}
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!-- #/ content body -->
+        <!-- footer -->
+        {% include "footer.html" %}
+        <!-- #/ footer -->
+    </div>
+    <!-- Common JS -->
+    <script src="{{ static_url_for('static', filename='assets/plugins/common/common.min.js') }}"></script>
+    <!-- Custom script -->
+    <script src="{{ static_url_for('static', filename='assets/js/custom.min.js') }}"></script>
+    <!-- Chartjs chart -->
+    <script src="{{ static_url_for('static', filename='assets/plugins/chartjs/Chart.bundle.js') }}"></script>
+    <!-- Custom dashboard script -->
+    <script src="{{ static_url_for('static', filename='assets/js/dashboard-1.js') }}"></script>
+</body>
+
+</html>
